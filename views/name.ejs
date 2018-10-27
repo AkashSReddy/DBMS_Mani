@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+    <h1>
+        <%= title %>
+    </h1>
+    <h5>This is the name page</h5>
+    <p>Welcome to
+        <%= title %>
+    </p>
+    <% data.forEach(function(data){ %>
+    <div>
+
+        <%= data.name %>
+        <img src="<%= data.image %>">
+        <div>
+            <h4>The first hand price is
+                <%= data.Price1 %>
+            </h4>
+        </div>
+        <div>
+            <h4>The Second hand price is
+                <%= data.Price2 %>
+            </h4>
+        </div>
+        <div>
+            <h4>The Thrid hand price is
+                <%= data.Price3 %>
+            </h4>
+        </div>
+    </div>
+
+    <%})%>
+
+    <form action="/id" method="GET">
+
+        <button>1st hand</button>
+    </form>
+    <form action="/id" method="GET">
+        <div>
+            <%= data.Price2 %>
+        </div>
+        <button>2st hand </button>
+    </form>
+    <form action="/id" method="GET">
+        <div>
+            <%= data.Price3 %>
+        </div>
+        <button>3st hand
+        </button>
+    </form>
+</body>
+
+</html>
