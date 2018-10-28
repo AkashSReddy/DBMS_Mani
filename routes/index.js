@@ -6,7 +6,10 @@ router.get("/", (req, res, next) => {
   res.render("login", { title: "DBMS Project" });
 });
 router.post("/", (req, res, next) => {
-  if (req.body.email == "abc@gmail.com" && req.body.password == "1234567890") {
+  if (
+    (req.body.email == "abc@gmail.com" && req.body.password == "1234567890") ||
+    (req.body.email == "mani@gmail.com" && req.body.password == "mani")
+  ) {
     res.redirect("/car");
   } else {
     res.redirect("/");
@@ -19,6 +22,10 @@ router.get("/car", (req, res, next) => {
 });
 
 router.get("/id", (req, res, next) => {
+  res.render("method", { title: "DBMS Project" });
+});
+
+router.get("/payment", (req, res, next) => {
   res.render("payment", { title: "DBMS Project" });
 });
 
